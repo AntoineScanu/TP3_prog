@@ -6,14 +6,7 @@
 	* @brief
 	*  Conception d'un type pour les listes d'entiers
 	*  et des focntions associées
-	*
-	* @TODO
-	*  Ajoutez les fonctions de consultation des éléments de liste :
-	*  + getX
-	*  + getSuc
-	*  + setX
-	*  + setSuc
-	*
+
 	* @TODO
 	*  Puis, séparez les éléments afin qu'apparaissent :
 	*  + Un fichier d'entêtes (.h) de la bibliothèque liste d'entiers,
@@ -95,14 +88,6 @@ int main() {
 	return EXIT_SUCCESS;
 }
 
-/***
-  * DÉFINITIONS DES FONCTIONS
-  ***/
-/** @todo Définissez les fonctions publiques :
- * + new_lst_elm
- * + del_lst_elm
- * des éléments de liste d'entiers.
- **/
 struct lst_elm_t * new_lst_elm(int x){
 	struct lst_elm_t * E;
  	E = (struct lst_elm_t *) calloc(1, sizeof(struct lst_elm_t));
@@ -126,11 +111,19 @@ struct lst_t * new_lst() {
 	assert(L);
 	return L;
 }
-void del_lst(struct lst_t ** ptrL ) {
-	/** @todo */
-}
+// void del_lst(struct lst_t ** ptrL ) {
+// 	/** @todo */
+// 	assert(ptrL && *ptrL);
+// for(struct lst_elm_t * E = (*ptrE)->head; E; ) {
+// 	struct lst_elm_t * T = E;
+// 	E = E->suc;
+// 	del_lst_elm_t(&T);
+// 	}
+// 	free(*ptrL);
+// 	*ptrL = NULL;
+// }
 
-int getX(struct lst_elm_t * E)
+int getX(struct lst_elm_t *E)
 {
     return E->x;
 }
