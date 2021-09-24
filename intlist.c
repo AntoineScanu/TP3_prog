@@ -101,12 +101,22 @@ int main() {
 /** @todo Définissez les fonctions publiques :
  * + new_lst_elm
  * + del_lst_elm
- * + getX
- * + getSuc
- * + setX
- * + setSuc
  * des éléments de liste d'entiers.
  **/
+struct lst_elm_t * new_lst_elm(int x){
+	struct lst_elm_t * E;
+ 	E = (struct lst_elm_t *) calloc(1, sizeof(struct lst_elm_t));
+ 	assert(E);
+	E->x= x;
+	return E;
+}
+
+void del_lst_elm_t(struct lst_elm_t ** ptrE){
+	assert(ptrE && *ptrE);
+	free(*ptrE);
+	*ptrE = NULL;
+}
+
 struct lst_t * new_lst() {
 	/**
 	 * @note : calloc fonctionne de manière identique à malloc
@@ -118,6 +128,23 @@ struct lst_t * new_lst() {
 }
 void del_lst(struct lst_t ** ptrL ) {
 	/** @todo */
+}
+
+int getX(struct lst_elm_t * E)
+{
+    return E->x;
+}
+struct lst_elm_t *getSuc(struct lst_elm_t *E)
+{
+    return E->suc;
+}
+void setX(struct lst_elm_t *E, int v)
+{
+    E->x = v;
+}
+void setSuc(struct lst_elm_t *E, struct lst_elm_t *S)
+{
+    E->suc = S->suc;
 }
 bool empty_lst(const struct lst_t * L ) {
 	assert(L);// L doit exister !
