@@ -48,7 +48,13 @@ int getX ( struct lst_elm_t *E );
 struct lst_elm_t * getSuc ( struct lst_elm_t * E );
 /** @brief Modifier la valeur du champ x de l'élément de liste d'entiers */
 void setX (struct lst_elm_t * E, int v );
-/** @brief Modifier la valeur du champ suc de l'élément de liste d'entiers */
+/** @brief Modifier la valeurstruct lst_elm_t * new_lst_elm(int x){
+	struct lst_elm_t * E;
+ 	E = (struct lst_elm_t *) calloc(1, sizeof(struct lst_elm_t));
+ 	assert(E);
+	E->x= x;
+	return E;
+}champ suc de l'élément de liste d'entiers */
 void setSuc ( struct lst_elm_t *E, struct lst_elm_t * S );
 
 /** @brief Le type d'une liste :
