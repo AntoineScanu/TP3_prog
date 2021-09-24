@@ -1,6 +1,7 @@
 #ifndef _LST_
 #define _LST_
 #include <stdbool.h>
+#include <lst_elm.h>
 
 struct lst_t {
 	struct lst_elm_t * head;
