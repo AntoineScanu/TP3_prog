@@ -22,7 +22,10 @@
 #include <assert.h> // librairie d'assertions
 
 /***
- * LES TYPES ABSTRAITS
+ * LES TYPES ABSTRAITS#include <stdlib.h> // librairie standard
+#include <stdio.h> // librairie input/output
+#include <stdbool.h> // librairie du type booléen
+#include <assert.h> // librairie d'assertions
  ***/
 /** @brief Le type d'un élément de liste:
  * + x - un entier,
