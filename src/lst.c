@@ -7,6 +7,7 @@
 
 
 
+
 bool empty_lst(const struct lst_t * L ) {
 	assert(L);// L doit exister !
 	return L->numelm == 0;
@@ -39,11 +40,11 @@ struct lst_t * new_lst() {
 }
 void del_lst(struct lst_t ** ptrL ) {
 	assert(ptrL && *ptrL);
-// for(struct lst_elm_t * E = (*ptrE)->head; E; ) {
-// 	struct lst_elm_t * T = E;
-// 	E = E->suc;
-// 	del_lst_elm_t(&T);
-// 	}
+for(struct lst_elm_t * E = (*ptrL)->head; E; ) {
+	struct lst_elm_t * T = E;
+	E = E->suc;
+	del_lst_elm_t(&T);
+	}
 	free(*ptrL);
 	*ptrL = NULL;
 }
@@ -62,7 +63,25 @@ void insert_after(struct lst_t *L, const int value, struct lst_elm_t *place)
             L->tail = new;
     }
 }
-void insert_ordered(struct lst_t * L, const int value)
-{
-	
+void insert_ordered(struct lst_t * L, const int value){
+	if (empty_lst(L)){
+		cons(L, value);
+	}
+	else if (value <= L->head->x){
+		
+		cons(L, value);
+	}
+	else if (value >= L->tail->x){
+		
+		insert_after(L, value, L->tail);
+	}
+	else{
+		for (struct lst_elm_t * E = L->head; E; E = E->suc){
+			if ((E->x < value) && (value <= E->suc->x)){
+				insert_after(L, value, E);
+				break;
+			}				
+		}
+		
+	}
 }

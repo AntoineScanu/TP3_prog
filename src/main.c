@@ -14,7 +14,7 @@ int main() {
 	printf("Entrer des valeurs puis 0 pour valider : ");
 	scanf( "%d", &v );
 	while( v > 0 ) {
-		cons(L,v);
+		insert_ordered(L,v);
 		scanf("%d",&v);
 	}
 	print_lst(L);

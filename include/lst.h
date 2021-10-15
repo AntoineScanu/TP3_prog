@@ -21,6 +21,6 @@ bool empty_lst(const struct lst_t * L);
 void cons(struct lst_t * L, int v);
 /** @brief Visualiser les éléments de la liste L */
 void print_lst(struct lst_t * L );
-
+void insert_ordered(struct lst_t * L, const int value);
 
 #endif
