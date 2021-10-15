@@ -47,3 +47,22 @@ void del_lst(struct lst_t ** ptrL ) {
 	free(*ptrL);
 	*ptrL = NULL;
 }
+void insert_after(struct lst_t *L, const int value, struct lst_elm_t *place)
+{
+    if (place == NULL)
+        cons(L, value);
+    else
+    {
+        struct lst_elm_t *new = new_lst_elm(value);
+        assert(new);
+        new->suc = place->suc;
+        place->suc = new;
+        L->numelm++;
+        if (place == L->tail)
+            L->tail = new;
+    }
+}
+void insert_ordered(struct lst_t * L, const int value)
+{
+	
+}

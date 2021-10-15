@@ -18,6 +18,6 @@ int main() {
 		scanf("%d",&v);
 	}
 	print_lst(L);
-	del_lst(L);
+	del_lst(&L);
 	return EXIT_SUCCESS;
 }
