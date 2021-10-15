@@ -11,6 +11,7 @@
 int main() {
 	int v;
 	struct lst_t * L = new_lst();
+	printf("Entrer des valeurs puis 0 pour valider : ");
 	scanf( "%d", &v );
 	while( v > 0 ) {
 		cons(L,v);
